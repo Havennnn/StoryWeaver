@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   return (
-<div className="min-h-screen flex flex-col justify-center lg:flex-row lg:justify-between items-center lg:px-32 px-5 gap-10 bg-gradient-to-tr from-[#BDE0FE] to-[#FFB6C1]">
+<div className="min-h-screen flex flex-col justify-center lg:flex-row lg:justify-between items-center lg:px-32 px-5 gap-10 bg-gradient-to-r from-[#BDE0FE] to-[#FFB6C1]">
 <div className="w-full lg:w-2/4 space-y-4 mt-64 lg:mt-0">
         <h1 className="font-semibold text-5xl text-center lg:text-start leading-tight">
           Create a story within seconds with AI
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-10 w-full lg:w-2/3 mx-4">
+      <div className="w-full lg:w-2/3 lg:ml-32">
        <Lottie animationData={lottieAnimation} loop={true} />
       </div>
     </div>
