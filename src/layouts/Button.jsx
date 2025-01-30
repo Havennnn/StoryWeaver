@@ -3,7 +3,7 @@ import React from "react";
 const Button = ({ title, onClick }) => {
   return (
     <div>
-      <button className="px-6 py-2 shadow-xl hover:bg-[#C08EF8] text-white border-violet-300 border font-semibold bg-[#D8B4F8] hover:shadow-xl transition-all rounded-full" onClick={onClick}>
+      <button className="px-8 py-2 text-md hover:bg-[#01FFDC] hover:text-[#031A2E] text-[#01FFDC] border border-[#01FFDC] hover:shadow-xl transition-all rounded-md" onClick={onClick}>
         {title}
       </button>
     </div>

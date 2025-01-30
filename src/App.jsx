@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Devs from "./components/Devs";
 import Footer from "./components/Footer";
+import Box from "./components/Box";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         </div>
 
         <div id="about">
+          <Box />
           <About />
         </div>
 

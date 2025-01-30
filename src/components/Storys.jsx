@@ -90,12 +90,12 @@ const Storys = ({ prompts }) => {
   }, [prompts]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center lg:px-32 px-5 bg-purple-100">
-      <h1 className="font-semibold text-center text-4xl lg:mt-14 mt-24 mb-8">
+    <div className="min-h-screen flex flex-col items-center justify-center lg:px-32 px-5 bg-white">
+      <h1 className="font-semibold text-center text-4xl lg:mt-14 mt-24 mb-8 text-[#01FFDC]">
         Story Generating
       </h1>
 
-      <div className="min-h-screen bg-purple-100">
+      <div className="min-h-screen">
         <div className="min-h-screen flex justify-center">
           <div className="w-2/3 mx-auto">
             {loading ? (
@@ -103,7 +103,7 @@ const Storys = ({ prompts }) => {
                 <Rings
                   height="100"
                   width="100"
-                  color="#8d5cf6"
+                  color="#01FFDC"
                   radius="6"
                   wrapperStyle={{}}
                   wrapperClass=""
@@ -134,8 +134,8 @@ const Storys = ({ prompts }) => {
                         </div>
                       </div>
                       <div className="w-1/5 flex justify-center">
-                        <div className="relative flex h-full w-1 lg:w-2 bg-brightColor items-center justify-center">
-                          <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 rounded-full border-2 border-brightColor leading-none text-center z-10 bg-white font-thin">
+                        <div className="relative flex h-full w-1 lg:w-2 bg-[#031A2E] items-center justify-center">
+                          <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 rounded-full border-2 border-[#031A2E] leading-none text-center z-10 bg-white font-bold">
                             <div>{index + 1}</div>
                           </div>
                         </div>
@@ -146,8 +146,8 @@ const Storys = ({ prompts }) => {
                     <>
                       <div className="lg:w-2/5 px-2 py-10 mx-4"></div>
                       <div className="w-1/5 flex justify-center">
-                        <div className="relative flex h-full w-1 lg:w-2 bg-brightColor items-center justify-center">
-                          <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 mr-4 rounded-full border-2 border-brightColor leading-none text-center z-10 bg-white font-thin">
+                        <div className="relative flex h-full w-1 lg:w-2 bg-[#031A2E] items-center justify-center">
+                          <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 mr-4 rounded-full border-2 border-[#031A2E] text-[#031A2E] leading-none text-center z-10 bg-white font-bold">
                             <div>{index + 1}</div>
                           </div>
                         </div>

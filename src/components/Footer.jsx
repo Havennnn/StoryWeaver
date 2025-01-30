@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaEnvelope, FaPhone, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const [name, setName] = useState("");
@@ -12,24 +13,58 @@ const Footer = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-[#fbeffe] to-[#e5f1fd] text-black mt-8 md:mt-0">
+    <div className="bg-[#031A2E] text-[#C8D7F4] mt-8 md:mt-0">
       <div className="flex flex-col md:flex-row justify-between gap-10 p-8 md:px-32 px-5 w=full">
-      <div className="w-full md:w-1/2">
-        <h1 className="font-semibold text-xl pb-4">Story Weaver</h1>
-        <p className="text-sm">
-          Story Weaver is an AI story generator. In a few seconds, you will get your own story based on the keywords and prompts you enter. It is very easy to use, and we have created a simple tool to help you create your own story. This tool is very useful and will give you a story of just 60 words.
-        </p>
+        <div className="w-full md:w-1/2">
+          <h1 className="font-semibold text-xl pb-4 text-[#01FFDC]">
+            Story Weaver
+          </h1>
+          <p className="text-sm">
+            Story Weaver is an AI story generator. In a few seconds, you will
+            get your own story based on the keywords and prompts you enter. It
+            is very easy to use, and we have created a simple tool to help you
+            create your own story. This tool is very useful and will give you a
+            story of just 60 words.
+          </p>
 
-        <h2 className="font-medium text-lg mt-6">Contact Us</h2>
-        <div>
-          <p><strong>Email:</strong> <a href="mailto:Storyweaver@gmail.com" className="text-brightColor hover:underline">Storyweaver@gmail.com</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+91912039120321" className="text-brightColor hover:underline">+91 91203 91203 21</a></p>
-          <p><strong>Facebook:</strong> <a href="https://facebook.com/storyweaver" className="text-brightColor hover:underline" target="_blank" rel="noopener noreferrer">facebook.com/storyweaver</a></p>
-          <p><strong>Instagram:</strong> <a href="https://instagram.com/storyweaver" className="text-brightColor hover:underline" target="_blank" rel="noopener noreferrer">instagram.com/storyweaver</a></p>
+          <h2 className="font-medium text-lg mt-6 text-[#01FFDC]">
+            Contact Us
+          </h2>
+          <div className="mt-2 flex gap-5">
+            <a
+              href="mailto:Storyweaver@gmail.com"
+              className="flex items-center text-[#C8D7F4]"
+            >
+              <FaEnvelope className="text-2xl" />
+            </a>
+
+            <a
+              href="tel:+91912039120321"
+              className="flex items-center text-[#C8D7F4]"
+            >
+              <FaPhone className="text-2xl" />
+            </a>
+
+            <a
+              href="https://facebook.com/storyweaver"
+              className="flex items-center text-[#C8D7F4]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook className="text-2xl" />
+            </a>
+
+            <a
+              href="https://instagram.com/storyweaver"
+              className="flex items-center text-[#C8D7F4]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="text-2xl" />
+            </a>
+          </div>
         </div>
-      </div>
 
-      
         <div className="w-full md:w-1/2">
           <h1 className="font-medium text-xl pb-4 pt-5 md:pt-0">Contact Us</h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -39,7 +74,7 @@ const Footer = () => {
               placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md"
+              className="p-1 border border-gray-300 rounded-md"
             />
             <input
               type="email"
@@ -47,19 +82,19 @@ const Footer = () => {
               placeholder="Your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md"
+              className="p-1 border border-gray-300 rounded-md"
             />
             <textarea
               name="message"
               placeholder="Your Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md"
-              rows="4"
+              className="p-1 border border-gray-300 rounded-md"
+              rows="2"
             ></textarea>
             <button
               type="submit"
-              className="bg-brightColor text-white p-2 rounded-md mt-4 hover:bg-darkColor transition-all"
+              className="border border-[#01FFDC] text-[#01FFDC] p-2 rounded-md mt-2 hover:bg-darkColor transition-all"
             >
               Send Message
             </button>
@@ -69,7 +104,8 @@ const Footer = () => {
       <div>
         <p className="text-center py-4">
           © 2024
-          <span className="text-brightColor"> Story Weaver </span>| All rights reserved
+          <span className="text-[#01FFDC]"> Story Weaver </span>| All rights
+          reserved
         </p>
       </div>
     </div>

@@ -11,24 +11,27 @@ const Review = () => {
         What Our Users Say
       </h1>
 
-      <div className="flex flex-col lg:flex-row gap-5 justify-center py-4 my-8">
-        <Devs 
-          img={img1} 
-          title="Steve (Link from The Legend of Zelda)" 
-          username="@HeroOfTime" 
-          desc="Story Weaver has completely changed how I create content. The AI-generated stories are spot-on and save me so much time! Just like how the Master Sword always finds its mark!" 
+      <div className="flex flex-col lg:flex-row gap-5 justify-center items-center py-4 my-8">
+        <Devs
+          img={img1}
+          title="Steve"
+          username="@HeroOfTime"
+          desc="Story Weaver has completely changed how I create content. The AI-generated stories are spot-on and save me so much time! Just like how the Master Sword always finds its mark!"
+          className="transition-transform transform hover:scale-105 hover:shadow-xl rounded-lg p-6 border border-gray-200 bg-white"
         />
-        <Devs 
-          img={img2} 
-          title="Maria (Lara Croft from Tomb Raider)" 
-          username="@LaraCreations" 
-          desc="I was amazed at how easy it is to use Story Weaver. The interface is user-friendly, and the results are fantastic. It's as easy as solving an ancient puzzle!" 
+        <Devs
+          img={img2}
+          title="Maria"
+          username="@LaraCreations"
+          desc="I was amazed at how easy it is to use Story Weaver. The interface is user-friendly, and the results are fantastic. It's as easy as solving an ancient puzzle!"
+          className="transition-transform transform hover:scale-105 hover:shadow-xl rounded-lg p-6 border border-gray-200 bg-white"
         />
-        <Devs 
-          img={img3} 
-          title="Peter (Spider-Man)" 
-          username="@WebSlinger" 
-          desc="As a content creator, Story Weaver has become an essential tool in my workflow. Highly recommended! It's like swinging through the city with ease!" 
+        <Devs
+          img={img3}
+          title="Peter"
+          username="@WebSlinger"
+          desc="As a content creator, Story Weaver has become an essential tool in my workflow. Highly recommended! It's like swinging through the city with ease!"
+          className="transition-transform transform hover:scale-105 hover:shadow-xl rounded-lg p-6 border border-gray-200 bg-white"
         />
       </div>
     </div>

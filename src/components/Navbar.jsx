@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoBook } from "react-icons/io5";
 import { AiOutlineMenuUnfold, AiOutlineClose } from "react-icons/ai";
-import storyWeaverLogo from '../assets/StoryWeaver.svg'
+
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -16,22 +15,19 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full z-10">
+    <div className="fixed w-screen z-10">
       <div>
-        <div className="flex flex-row justify-between p-5 lg:px-32 px-5 backdrop-blur-md bg-white/50 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <div className="flex flex-row justify-between p-5 lg:px-32 px-5 backdrop-blur-sm bg-[rgb(10,25,47)]/10 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div className="flex flex-row items-center cursor-pointer gap-2">
-            <span>
-              <img src={storyWeaverLogo} className="w-8 h-8" />
-            </span>
-            <h1 className="text-xl font-semibold">Story Weaver</h1>
+            <h1 className="text-xl text-[#01FFDC] font-semibold">Story Weaver</h1>
           </div>
 
-          <nav className="hidden md:flex flex-row items-center text-lg gap-8">
+          <nav className="hidden md:flex flex-row items-center text-sm gap-8">
             <NavLink
               to="/"
               exact
               activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-brightColor text-textColor"
+              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
             >
               Home
             </NavLink>
@@ -39,7 +35,7 @@ const Navbar = () => {
             <NavLink
               to="/ai-story-generator"
               activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-brightColor text-textColor"
+              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
             >
               AI Story
             </NavLink>
@@ -47,7 +43,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-brightColor text-textColor"
+              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
             >
               Dev's
             </NavLink>
@@ -55,7 +51,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-brightColor text-textColor"
+              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
             >
               About Us
             </NavLink>
