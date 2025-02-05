@@ -33,11 +33,12 @@ const AiStory = () => {
               </h2>
             </div>
             <textarea
-              className="w-full m-4 h-[8rem] p-2 rounded-lg border border-[#01FFDC] focus:outline-none bg-gradient-to-l from-[#C8D7F4] to-[#7393AE] text-transparent bg-clip-text resize-none"
+              className="w-full m-4 h-[8rem] p-2 rounded-lg border border-[#01FFDC] focus:outline-none bg-[#0b1f30] resize-none placeholder-gray-500 focus:placeholder-transparent text-white"
               placeholder="Prompt should be in keywords. Enter 4 to 6 words to generate the best AI story."
               value={prompts}
               onChange={(e) => setPrompts(e.target.value)}
             ></textarea>
+
             {error && <p className="text-red-500 text-sm my-2">{error}</p>}
             <div className="">
               <Button title="Generate" onClick={handleStory} />

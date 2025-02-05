@@ -97,7 +97,7 @@ const Storys = ({ prompts }) => {
 
       <div className="min-h-screen">
         <div className="min-h-screen flex justify-center">
-          <div className="w-2/3 mx-auto">
+          <div className="w-full mx-auto">
             {loading ? (
               <div className="flex justify-center items-center min-h-screen">
                 <Rings
