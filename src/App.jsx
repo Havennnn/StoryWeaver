@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
-import Devs from "./components/Devs";
+import Users from "./components/Users";
 import Footer from "./components/Footer";
 import Box from "./components/Box";
 
@@ -22,7 +22,7 @@ const App = () => {
         </div>
 
         <div id="devs">
-          <Devs />
+          <Users />
         </div>
       </main>
 

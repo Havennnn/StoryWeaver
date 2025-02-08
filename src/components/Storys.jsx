@@ -90,8 +90,8 @@ const Storys = ({ prompts }) => {
   }, [prompts]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center lg:px-32 px-5 bg-white">
-      <h1 className="font-semibold text-center text-4xl lg:mt-14 mt-24 mb-8 text-[#01FFDC]">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center lg:px-32 px-5 bg-white">
+      <h1 className="font-semibold text-center text-4xl 2xl:text-5xl lg:mt-14 mt-24 mb-8 text-[#01FFDC]">
         Story Generating
       </h1>
 
@@ -101,10 +101,10 @@ const Storys = ({ prompts }) => {
             {loading ? (
               <div className="flex justify-center items-center min-h-screen">
                 <Rings
-                  height="100"
-                  width="100"
+                  height="200"
+                  width="200"
                   color="#01FFDC"
-                  radius="6"
+                  radius="12"
                   wrapperStyle={{}}
                   wrapperClass=""
                   visible={true}
@@ -121,19 +121,19 @@ const Storys = ({ prompts }) => {
                           <div className="text-gray-600 mb-2 flex justify-end">
                             <div className="flex flex-row">
                               <IoCopy
-                                className="text-textColor hover:text-brightColor cursor-pointer"
+                                className="text-textColor hover:text-[#01FFDC] cursor-pointer 2xl:text-3xl"
                                 onClick={() =>
                                   copyToClipboard(entry.description)
                                 }
                               />
                             </div>
                           </div>
-                          <div className="text-gray-600">
+                          <div className="text-gray-600 2xl:text-2xl">
                             {entry.description}
                           </div>
                         </div>
                       </div>
-                      <div className="w-1/5 flex justify-center">
+                      <div className="w-1/5 flex justify-center items-center">
                         <div className="relative flex h-full w-1 lg:w-2 bg-[#031A2E] items-center justify-center">
                           <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 rounded-full border-2 border-[#031A2E] leading-none text-center z-10 bg-white font-bold">
                             <div>{index + 1}</div>
@@ -145,7 +145,7 @@ const Storys = ({ prompts }) => {
                   ) : (
                     <>
                       <div className="lg:w-2/5 px-2 py-10 mx-4"></div>
-                      <div className="w-1/5 flex justify-center">
+                      <div className="w-1/5 flex justify-center items-center">
                         <div className="relative flex h-full w-1 lg:w-2 bg-[#031A2E] items-center justify-center">
                           <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 mr-4 rounded-full border-2 border-[#031A2E] text-[#031A2E] leading-none text-center z-10 bg-white font-bold">
                             <div>{index + 1}</div>
@@ -157,14 +157,14 @@ const Storys = ({ prompts }) => {
                           <div className="text-gray-600 mb-2 flex justify-end">
                             <div className="flex flex-row">
                               <IoCopy
-                                className="text-textColor hover:text-brightColor cursor-pointer"
+                                className="text-textColor hover:text-[#01FFDC] cursor-pointer 2xl:text-3xl"
                                 onClick={() =>
                                   copyToClipboard(entry.description)
                                 }
                               />
                             </div>
                           </div>
-                          <div className="text-gray-600">
+                          <div className="text-gray-600 2xl:text-2xl">
                             {entry.description}
                           </div>
                         </div>

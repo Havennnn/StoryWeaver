@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AiOutlineMenuUnfold, AiOutlineClose } from "react-icons/ai";
 
-
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
@@ -15,14 +14,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-screen z-10">
+    <div className="fixed w-full z-10">
       <div>
         <div className="flex flex-row justify-between p-5 lg:px-32 px-5 backdrop-blur-sm bg-[rgb(10,25,47)]/10 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div className="flex flex-row items-center cursor-pointer gap-2">
-            <h1 className="text-xl text-[#01FFDC] font-semibold">Story Weaver</h1>
+            <h1 className="text-xl 2xl:text-3xl text-[#01FFDC] font-semibold">
+              Story Weaver
+            </h1>
           </div>
 
-          <nav className="hidden md:flex flex-row items-center text-sm gap-8">
+          <nav className="hidden md:flex flex-row items-center text-sm 2xl:text-xl gap-8">
             <NavLink
               to="/"
               exact
@@ -57,7 +58,7 @@ const Navbar = () => {
             </NavLink>
           </nav>
 
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center text-[#7393AE]">
             {menu ? (
               <AiOutlineClose size={25} onClick={handleChange} />
             ) : (

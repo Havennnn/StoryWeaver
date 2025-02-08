@@ -16,10 +16,10 @@ const Footer = () => {
     <div className="bg-[#031A2E] text-[#C8D7F4] mt-8 md:mt-0">
       <div className="flex flex-col md:flex-row justify-between gap-10 p-8 md:px-32 px-5 w=full">
         <div className="w-full md:w-1/2">
-          <h1 className="font-semibold text-xl pb-4 text-[#01FFDC]">
+          <h1 className="font-semibold text-xl 2xl:text-3xl pb-4 text-[#01FFDC]">
             Story Weaver
           </h1>
-          <p className="text-sm">
+          <p className="text-sm 2xl:text-xl">
             Story Weaver is an AI story generator. In a few seconds, you will
             get your own story based on the keywords and prompts you enter. It
             is very easy to use, and we have created a simple tool to help you
@@ -27,54 +27,50 @@ const Footer = () => {
             story of just 60 words.
           </p>
 
-          <h2 className="font-medium text-lg mt-6 text-[#01FFDC]">
+          <h2 className="font-medium text-lg 2xl:text-2xl mt-6 text-[#01FFDC]">
             Contact Us
           </h2>
-          <div className="mt-2 flex gap-5">
+          <div className="mt-2 flex gap-5 text-2xl 2xl:text-4xl">
             <a
-              href="mailto:Storyweaver@gmail.com"
+              href="mailto:marablelatrell@gmail.com"
               className="flex items-center text-[#C8D7F4]"
             >
-              <FaEnvelope className="text-2xl" />
+              <FaEnvelope />
             </a>
 
             <a
-              href="tel:+91912039120321"
+              href="Phone:09953324941"
               className="flex items-center text-[#C8D7F4]"
             >
-              <FaPhone className="text-2xl" />
+              <FaPhone />
             </a>
 
             <a
-              href="https://facebook.com/storyweaver"
+              href="https://facebook.com/"
               className="flex items-center text-[#C8D7F4]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook className="text-2xl" />
-            </a>
-
-            <a
-              href="https://instagram.com/storyweaver"
-              className="flex items-center text-[#C8D7F4]"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="text-2xl" />
+              <FaFacebook />
             </a>
           </div>
         </div>
 
         <div className="w-full md:w-1/2">
-          <h1 className="font-medium text-xl pb-4 pt-5 md:pt-0">Contact Us</h1>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <h1 className="font-bold text-xl 2xl:text-3xl pb-4 pt-5 md:pt-0">
+            Contact Us
+          </h1>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 2xl:text-xl text-black"
+          >
             <input
               type="text"
               name="name"
               placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="p-1 border border-gray-300 rounded-md"
+              className="p-2 border border-gray-300 rounded-md"
             />
             <input
               type="email"
@@ -82,14 +78,14 @@ const Footer = () => {
               placeholder="Your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="p-1 border border-gray-300 rounded-md"
+              className="p-2 border border-gray-300 rounded-md"
             />
             <textarea
               name="message"
               placeholder="Your Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="p-1 border border-gray-300 rounded-md"
+              className="p-2 border border-gray-300 rounded-md"
               rows="2"
             ></textarea>
             <button
@@ -101,11 +97,16 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <div>
-        <p className="text-center py-4">
-          © 2024
-          <span className="text-[#01FFDC]"> Story Weaver </span>| All rights
-          reserved
+      <div className="flex justify-center items-center flex-col mt-10 gap-2">
+        <img
+          src="/LM.svg"
+          alt="LatsMarbls"
+          className="h-8 w-8 2xl:h-12 2xl:w-12"
+        />
+        <p className="text-center py-4 2xl:text-xl">
+          © LatsMarbls,
+          <span className="text-[#01FFDC]"> Story Weaver </span> Project | All
+          rights reserved
         </p>
       </div>
     </div>
