@@ -2,39 +2,32 @@ import React from "react";
 import { FaBook, FaBrain, FaFileAlt, FaLightbulb } from "react-icons/fa";
 
 const Box = () => {
+  const items = [
+    { icon: FaBook, title: "Stories", desc: "Explore a collection of captivating stories." },
+    { icon: FaBrain, title: "AI Powered", desc: "Harness the power of artificial intelligence." },
+    { icon: FaFileAlt, title: "Generative Text", desc: "Generate unique text based on prompts." },
+    { icon: FaLightbulb, title: "Creative", desc: "Inspire creativity with innovative ideas." },
+  ];
+
   return (
-    <div className="p-2 w-full max-w-full">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-2 text-center">
-        <div className="border p-4 2xl:p-8 flex flex-col items-center">
-          <FaBook className="text-3xl 2xl:text-6xl text-[#031A2E]" />
-          <p className="mt-2 2xl:mt-4 font-semibold 2xl:text-2xl">Stories</p>
-          <p className="text-sm 2xl:text-xl text-gray-600 mt-1">
-            Explore a collection of captivating stories.
-          </p>
-        </div>
-        <div className="border p-4 2xl:p-8 flex flex-col items-center">
-          <FaBrain className="text-3xl 2xl:text-6xl text-[#031A2E]" />
-          <p className="mt-2 font-semibold 2xl:text-2xl">AI Powered</p>
-          <p className="text-sm 2xl:text-xl text-gray-600 mt-1">
-            Harness the power of artificial intelligence.
-          </p>
-        </div>
-        <div className="border p-4 2xl:p-8 flex flex-col items-center">
-          <FaFileAlt className="text-3xl 2xl:text-6xl text-[#031A2E]" />
-          <p className="mt-2 font-semibold 2xl:text-2xl">Generative Text</p>
-          <p className="text-sm 2xl:text-xl text-gray-600 mt-1">
-            Generate unique text based on prompts.
-          </p>
-        </div>
-        <div className="border p-4 2xl:py-8 2xl:px-12 flex flex-col items-center">
-          <FaLightbulb className="text-3xl 2xl:text-6xl text-[#031A2E]" />
-          <p className="mt-2 font-semibold 2xl:text-2xl">Creative</p>
-          <p className="text-sm 2xl:text-xl text-gray-600 mt-1">
-            Inspire creativity with innovative ideas.
-          </p>
+    <section className="px-5 lg:px-32 py-12 bg-[#031A2E]">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {items.map((it) => {
+            const Icon = it.icon;
+            return (
+              <div key={it.title} className="bg-[#0b1f30] p-6 rounded-2xl border border-[#073046] text-center">
+                <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[#01FFDC] text-[#001219] mx-auto">
+                  <Icon className="text-2xl" />
+                </div>
+                <h4 className="mt-4 text-lg font-semibold text-white">{it.title}</h4>
+                <p className="mt-2 text-sm text-[#9fb0bf]">{it.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

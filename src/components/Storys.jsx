@@ -89,96 +89,76 @@ const Storys = ({ prompts }) => {
     }
   }, [prompts]);
 
-  return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center lg:px-32 px-5 bg-white">
-      <h1 className="font-semibold text-center text-4xl 2xl:text-5xl lg:mt-14 mt-24 mb-8 text-[#01FFDC]">
-        Story Generating
-      </h1>
+return (
+  <div className="min-h-screen w-full bg-[#031A2E] py-12 px-5 lg:px-32 text-white">
+    <div className="max-w-6xl mx-auto">
+      <header className="text-center mb-8">
+        <h1 className="font-semibold text-3xl lg:text-4xl text-[#01FFDC]">Story Generating</h1>
+        <p className="mt-2 text-sm text-[#A9BDD0]">
+          Short micro-stories generated from your keywords. Click the copy icon to save a story.
+        </p>
+      </header>
 
-      <div className="min-h-screen">
-        <div className="min-h-screen flex justify-center">
-          <div className="w-full mx-auto">
-            {loading ? (
-              <div className="flex justify-center items-center min-h-screen">
-                <Rings
-                  height="200"
-                  width="200"
-                  color="#01FFDC"
-                  radius="12"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                  ariaLabel="rings-loading"
-                />
-              </div>
-            ) : (
-              entries.map((entry, index) => (
-                <div className="flex flex-row w-full" key={entry.id}>
-                  {entry.side === "left" ? (
-                    <>
-                      <div className="lg:w-2/5 px-2 py-10 mx-4">
-                        <div className="flex flex-col w-full rounded-lg shadow bg-white px-4 py-5">
-                          <div className="text-gray-600 mb-2 flex justify-end">
-                            <div className="flex flex-row">
-                              <IoCopy
-                                className="text-textColor hover:text-[#01FFDC] cursor-pointer 2xl:text-3xl"
-                                onClick={() =>
-                                  copyToClipboard(entry.description)
-                                }
-                              />
-                            </div>
-                          </div>
-                          <div className="text-gray-600 2xl:text-2xl">
-                            {entry.description}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-1/5 flex justify-center items-center">
-                        <div className="relative flex h-full w-1 lg:w-2 bg-[#031A2E] items-center justify-center">
-                          <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 rounded-full border-2 border-[#031A2E] leading-none text-center z-10 bg-white font-bold">
-                            <div>{index + 1}</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-2/5 px-2 py-10"></div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="lg:w-2/5 px-2 py-10 mx-4"></div>
-                      <div className="w-1/5 flex justify-center items-center">
-                        <div className="relative flex h-full w-1 lg:w-2 bg-[#031A2E] items-center justify-center">
-                          <div className="absolute flex flex-col justify-center h-16 w-16 lg:h-24 lg:w-24 mr-4 rounded-full border-2 border-[#031A2E] text-[#031A2E] leading-none text-center z-10 bg-white font-bold">
-                            <div>{index + 1}</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="lg:w-2/5 px-2 py-10">
-                        <div className="flex flex-col w-full rounded-lg shadow bg-white px-4 py-5">
-                          <div className="text-gray-600 mb-2 flex justify-end">
-                            <div className="flex flex-row">
-                              <IoCopy
-                                className="text-textColor hover:text-[#01FFDC] cursor-pointer 2xl:text-3xl"
-                                onClick={() =>
-                                  copyToClipboard(entry.description)
-                                }
-                              />
-                            </div>
-                          </div>
-                          <div className="text-gray-600 2xl:text-2xl">
-                            {entry.description}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              ))
-            )}
+      <main>
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-24">
+            <Rings height="140" width="140" color="#01FFDC" radius="12" visible={true} ariaLabel="rings-loading" />
+            <p className="mt-4 text-[#9fb0bf]">Generating stories…</p>
           </div>
-        </div>
-      </div>
+        ) : entries.length === 0 ? (
+          <div className="rounded-xl border border-[#073046] bg-[#0b1f30] p-12 text-center">
+            <p className="text-[#A9BDD0] mb-6">No stories yet — enter keywords to generate.</p>
+            <div className="flex justify-center">
+              <button
+                onClick={() => generateStory?.()}
+                className="inline-flex items-center px-5 py-2 rounded-full bg-[#01FFDC] text-[#001219] font-semibold shadow"
+              >
+                Generate Stories
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {entries.map((entry, index) => (
+              <article
+                key={entry.id}
+                className="relative bg-[#0b1f30] border border-[#073046] rounded-2xl p-6 shadow hover:scale-[1.01] transition-transform"
+              >
+                <div className="absolute -top-6 left-6">
+                  <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center font-bold text-[#031A2E] border-2 border-[#031A2E]">
+                    {index + 1}
+                  </div>
+                </div>
+
+                <div className="py-5 ml-0 lg:ml-6">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-lg font-semibold text-white">{entry.title ?? `Story ${index + 1}`}</h3>
+
+                    <button
+                      onClick={() => copyToClipboard(entry.description)}
+                      aria-label={`Copy story ${index + 1}`}
+                      className="p-2 rounded hover:bg-[#06222c]"
+                    >
+                      <IoCopy className="text-xl text-[#A9BDD0]" />
+                    </button>
+                  </div>
+
+                  <p className="mt-4 text-[#c9dbea] leading-relaxed whitespace-pre-wrap">{entry.description}</p>
+
+                  <div className="mt-4 flex items-center justify-between text-sm text-[#8fa9b8]">
+                    <span>Words: {String(entry.description || "").split(/\s+/).filter(Boolean).length}</span>
+                    <span>Side: {entry.side}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </main>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Storys;

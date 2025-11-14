@@ -14,94 +14,95 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full z-10">
-      <div>
-        <div className="flex flex-row justify-between p-5 lg:px-32 px-5 backdrop-blur-sm bg-[rgb(10,25,47)]/10 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-          <div className="flex flex-row items-center cursor-pointer gap-2">
-            <h1 className="text-xl 2xl:text-3xl text-[#01FFDC] font-semibold">
-              Story Weaver
-            </h1>
+    <div className="w-full bg-[#063245] z-20"> 
+      <div className="bg-[#031A2E]/70 border-b border-[#073046]">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
+          
+          <div className="flex items-center gap-3 cursor-pointer">
+            <div>
+              <h1 className="text-lg lg:text-xl font-semibold text-white">Story Weaver</h1>
+              <div className="text-xs text-gray-300 -mt-0.5">Micro-stories, instantly</div>
+            </div>
           </div>
 
-          <nav className="hidden md:flex flex-row items-center text-sm 2xl:text-xl gap-8">
+          <nav className="hidden md:flex items-center gap-8">
             <NavLink
               to="/"
               end
-              activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
+              className={({ isActive }) =>
+                `px-2 py-1 transition text-sm lg:text-base ${
+                  isActive ? "text-[#01FFDC] font-semibold" : "text-[#A9BDD0] hover:text-[#01FFDC]"
+                }`
+              }
             >
               Home
             </NavLink>
 
             <NavLink
               to="/ai-story-generator"
-              activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
+              className={({ isActive }) =>
+                `px-2 py-1 transition text-sm lg:text-base ${
+                  isActive ? "text-[#01FFDC] font-semibold" : "text-[#A9BDD0] hover:text-[#01FFDC]"
+                }`
+              }
             >
               AI Story
             </NavLink>
 
+            <div className="md:hidden text-[#A9BDD0]">
+              {menu ? (
+                <AiOutlineClose size={24} onClick={handleChange} className="cursor-pointer" />
+              ) : (
+                <AiOutlineMenuUnfold size={24} onClick={handleChange} className="cursor-pointer" />
+              )}
+            </div>
+
+          </nav>
+        </div>
+      </div>
+
+      <div
+        className={`md:hidden absolute left-0 top-16 h-[calc(100vh-4rem)] z-30 transform transition-transform duration-300 ${
+          menu ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="bg-[#071826] h-full text-white p-6 flex flex-col">
+
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <div>
+                <div className="text-sm font-semibold">Story Weaver</div>
+                <div className="text-xs text-gray-300">Explore</div>
+              </div>
+            </div>
+          </div>
+
+          <nav className="flex flex-col gap-4 text-xl">
             <NavLink
               to="/"
-              activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
+              end
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                `py-3 px-2 rounded-md transition-colors ${
+                  isActive ? "bg-[#063245] text-[#01FFDC] font-semibold" : "text-gray-200 hover:bg-[#022a3a]"
+                }`
+              }
             >
-              Dev's
+              Home
             </NavLink>
 
             <NavLink
-              to="/"
-              activeClassName="text-brightColor"
-              className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
+              to="/ai-story-generator"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                `py-3 px-2 rounded-md transition-colors ${
+                  isActive ? "bg-[#063245] text-[#01FFDC] font-semibold" : "text-gray-200 hover:bg-[#022a3a]"
+                }`
+              }
             >
-              About Us
+              AI Story
             </NavLink>
           </nav>
-
-          <div className="md:hidden flex items-center text-[#7393AE]">
-            {menu ? (
-              <AiOutlineClose size={25} onClick={handleChange} />
-            ) : (
-              <AiOutlineMenuUnfold size={25} onClick={handleChange} />
-            )}
-          </div>
-        </div>
-        <div
-          className={`${
-            menu ? "translate-x-0" : "-translate-x-full"
-          } lg:hidden flex flex-col absolute bg-white h-screen text-white left-0 top-16 text-2xl text-center pt-8 pb-4 gap-8 w-full transition-transform duration-300`}
-        >
-          <NavLink
-            to="/"
-            exact
-            className="hover:text-brightColor transition-all cursor-pointer text-textColor"
-            onClick={closeMenu}
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/ai-story-generator"
-            activeClassName="text-brightColor"
-            className="group relative inline-block cursor-pointer hover:text-brightColor text-textColor"
-          >
-            AI Story
-          </NavLink>
-
-          <NavLink
-            to="/"
-            className="hover:text-brightColor transition-all cursor-pointer text-textColor"
-            onClick={closeMenu}
-          >
-            Dev's
-          </NavLink>
-          <NavLink
-            to="/"
-            className="hover:text-brightColor transition-all cursor-pointer text-textColor"
-            onClick={closeMenu}
-          >
-            About Us
-          </NavLink>
         </div>
       </div>
     </div>
