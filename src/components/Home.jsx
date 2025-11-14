@@ -46,8 +46,8 @@ const Home = () => {
               </div>
 
               <div className="rounded-lg bg-[#061723] p-4 border border-[#073046]">
-                <h4 className="text-sm font-semibold text-[#01FFDC]">Safe & Fast</h4>
-                <p className="text-xs text-[#9fb0bf] mt-1">Runs on secure server side APIs.</p>
+                <h4 className="text-sm font-semibold text-[#01FFDC]">Gemini 2.5</h4>
+                <p className="text-xs text-[#9fb0bf] mt-1">Runs very fast.</p>
               </div>
 
               <div className="rounded-lg bg-[#061723] p-4 border border-[#073046]">
