@@ -26,7 +26,7 @@ const Navbar = () => {
           <nav className="hidden md:flex flex-row items-center text-sm 2xl:text-xl gap-8">
             <NavLink
               to="/"
-              exact
+              end
               activeClassName="text-brightColor"
               className="group relative inline-block cursor-pointer hover:text-[#01FFDC] text-[#7393AE]"
             >

@@ -21,17 +21,17 @@ const Storys = ({ prompts }) => {
   const generateStory = async () => {
     setLoading(true);
     try {
-      const apiKey = import.meta.env.VITE_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       if (!apiKey) {
         throw new Error(
-          "API key is missing. Please set VITE_API_KEY in your environment variables."
+          "API key is missing."
         );
       }
 
       const stories = [];
       for (let i = 0; i < 5; i++) {
         const response = await axios.post(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`,
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
           {
             contents: [
               {
