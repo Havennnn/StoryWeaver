@@ -5,15 +5,6 @@ import Storys from "./Storys";
 import { WiStars } from "react-icons/wi";
 import Button from "../layouts/Button";
 
-/**
- * Redesigned AiStory (story input box)
- * - prompts: local textarea state
- * - examples: quick fill chips
- * - validation + inline error
- * - keyboard shortcut (Ctrl/Cmd + Enter) to submit
- * - smooth scroll to Storys
- */
-
 const EXAMPLE_PROMPTS = [
   "lonely lighthouse, lost letter",
   "city rooftop, tiny revolution",
@@ -29,7 +20,6 @@ const AiStory = () => {
   const storyRef = useRef(null);
   const textareaRef = useRef(null);
 
-  // helper: trimmed prompt, and simple word count
   const normalized = (s) => (s || "").trim();
   const wordCount = (s) => (s ? String(s).trim().split(/\s+/).filter(Boolean).length : 0);
 
@@ -45,30 +35,24 @@ const AiStory = () => {
       setError("Prompt cannot be empty. Please enter a prompt (4–6 keywords recommended).");
       return;
     }
-    // small heuristic: encourage short keyword prompts
+
     if (wordCount(text) > 20) {
       setError("Try 4–6 keywords for best results (you can still generate though).");
-      // allow generation anyway — remove 'return' if you want to force it
     } else {
       setError("");
     }
 
-    // prevent double-submit
     if (isSubmitting) return;
     setIsSubmitting(true);
 
-    // show the Storys component (it will run the generation on mount)
-    setShowStories(false); // reset so remount triggers the effect in Storys
-    // tiny delay to ensure remount (helps when same prompts used multiple times)
+    setShowStories(false);
     setTimeout(() => {
       setShowStories(true);
       setIsSubmitting(false);
-      // scroll after a short delay so Storys mount and then scroll
       setTimeout(scrollToStories, 300);
     }, 120);
   }, [prompts, isSubmitting, scrollToStories]);
 
-  // keyboard shortcut: Ctrl/Cmd + Enter to submit
   useEffect(() => {
     const handler = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
@@ -80,7 +64,6 @@ const AiStory = () => {
     return () => window.removeEventListener("keydown", handler);
   }, [handleGenerate]);
 
-  // click example chip to fill textarea
   const applyExample = (text) => {
     setPrompts(text);
     // focus the textarea for quick edit
@@ -91,8 +74,8 @@ const AiStory = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <div className="min-h-[70vh] lg:min-h-screen flex items-center justify-center bg-[#031A2E] px-4 lg:px-8 py-8">
-        <div className="w-full max-w-3xl rounded-2xl bg-[#0b1f30] p-8 shadow-xl">
+      <div className="min-h-[70vh] py-14 flex items-center justify-center bg-[#031A2E] px-4 lg:px-8">
+        <div className="w-full max-w-3xl rounded-2xl bg-[#0b1f30] p-8 shadow-xl  border border-[#073046]">
           <div className="flex items-center gap-4 mb-4">
             <WiStars size={44} className="text-[#01FFDC]" />
             <div>
@@ -161,8 +144,6 @@ const AiStory = () => {
       </div>
 
       <div ref={storyRef}>{showStories && <Storys prompts={prompts} />}</div>
-
-      <hr className="border-t border-gray-200" />
       <Footer />
     </div>
   );

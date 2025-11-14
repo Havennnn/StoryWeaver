@@ -5,7 +5,7 @@ import Button from "../layouts/Button";
 
 const About = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center lg:px-32 px-5 bg-[#031A2E] text-white py-20">
+    <section className="min-h-screen flex flex-col items-center justify-center lg:px-32 px-5 bg-[#031A2E] text-white">
       <div className="max-w-6xl w-full">
         <h1 className="font-semibold text-center text-4xl lg:text-5xl 2xl:text-6xl mb-8 inline-block border-b-2 border-[#01FFDC] pb-3">
           About Us

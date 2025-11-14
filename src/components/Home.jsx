@@ -3,7 +3,7 @@ import Button from "../layouts/Button";
 
 const Home = () => {
   return (
-    <section className="flex items-center bg-[#031A2E] px-5 lg:px-32 py-32">
+    <section className="flex items-center bg-[#031A2E] px-5 lg:px-32 pt-12">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-extrabold leading-tight text-white">

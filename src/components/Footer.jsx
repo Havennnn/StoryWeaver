@@ -8,7 +8,6 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     alert("Message sent!");
   };
 
@@ -28,7 +27,7 @@ const Footer = () => {
           </p>
 
           <h2 className="font-medium text-lg 2xl:text-2xl mt-6 text-[#01FFDC]">
-            Contact Us
+            Contact Me
           </h2>
           <div className="mt-2 flex gap-5 text-2xl 2xl:text-4xl">
             <a
